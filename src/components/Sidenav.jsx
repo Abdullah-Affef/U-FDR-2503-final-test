@@ -1,0 +1,12 @@
+import React from "react";
+
+const Sidenav = () => {
+  return (
+    <div className="fixed left-0 top-[96%] -translate-y-1/2 translate-x-0 -rotate-90 flex gap-96 w-10/10 text-4xl pl-0 ml-10 origin-left border-b border-b-zinc-600 pb-7">
+      <h1 className="uppercase">my name is robert</h1>
+      <h1 className="">1.0</h1>
+    </div>
+  );
+};
+
+export default Sidenav;

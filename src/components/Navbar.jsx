@@ -1,60 +1,75 @@
 import React from "react";
 import { FaFacebookF, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { Link } from "react-router";
 
-const Navbar = () => {
+const Navbar = ({ activeSection = "" }) => {
   const navLinks = [
     {
       content: "Home",
-      link: "/",
+      link: "#banner",
+      id: "banner",
     },
     {
       content: "Projects",
-      link: "/projects",
+      link: "#projects",
+      id: "projects",
     },
     {
       content: "Awards",
-      link: "/awards",
+      link: "#awards",
+      id: "awards",
     },
     {
       content: "Testimonials",
-      link: "/testimonials",
+      link: "#testimonials",
+      id: "testimonials",
     },
     {
       content: "Blog",
-      link: "/blog",
+      link: "#blog",
+      id: "blog",
     },
     {
       content: "CONTACT",
-      link: "/contact",
+      link: "#contact",
+      id: "contact",
     },
   ];
 
   return (
-    <nav className=" absolute top-0 left-0 w-full border-b border-b-gray-400 flex justify-between items-center">
-      <div className="flex items-center">
-        <div className="text-[38px] text-white pl-7.25 pt-7.25 pb-6.75 pr-7 border-r border-r-gray-400 w-fit">
+    <nav className="sticky top-0 left-0 border-b border-b-zinc-600 flex justify-between items-center">
+      {/* Left side */}
+      <div
+        className="flex items-center
+      "
+      >
+        <span className="px-7 py-6.5 text-4xl inline-block border-r border-r-zinc-600">
           P
-        </div>
-        <div className="Logos flex gap-[38.5px] pl-7 text-xl">
+        </span>
+        <div className="flex gap-8 text-xl ml-8">
           <FaFacebookF />
           <FaTwitter />
           <FaLinkedin />
         </div>
       </div>
-      {/* NAVLINK */}
-      <div className="navLinks h-">
-        <ul className="flex gap-16 ">
-          {navLinks.map((item, i) => {
-            return (
-              <li className="uppercase hover:text-orange-600/60">
-                <Link to={item.link}>{item.content}</Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-      <div className="phone-number text-sm pr-8.5">+2(315) 590 83 68</div>
+      {/* Navlinks */}
+      <ul className="navLinks flex gap-16">
+        {navLinks.map((item, i) => (
+          <li className="uppercase" key={i}>
+            <a
+              href={item.link}
+              className={`transition-colors duration-300 ${
+                activeSection === item.id
+                  ? "text-[#B66449]"
+                  : "text-white hover:text-[#B66449]"
+              }`}
+            >
+              {item.content}
+            </a>
+          </li>
+        ))}
+      </ul>
+      {/* Number */}
+      <div className="number text-sm mr-7">+2(315) 590 83 68</div>
     </nav>
   );
 };

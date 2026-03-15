@@ -9,6 +9,7 @@ import Experience from "../components/Experience";
 import Blog from "../components/Blog";
 import Contact from "../components/Contact";
 import useScrollSpy from "../hooks/useScrollSpy";
+import backgroundImage from "../assets/Rectangle.png";
 
 const sectionIds = [
   "banner",
@@ -26,7 +27,8 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="relative w-full min-h-screen bg-[url(src/assets/Rectangle.png)] overflow-x-hidden pt-23.25"
+      className={`relative w-full min-h-screen overflow-x-hidden pt-23.25`}
+      style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <Navbar activeSection={activeSection} />
       <Sidenav />

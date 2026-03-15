@@ -24,6 +24,11 @@ const Navbar = ({ activeSection = "" }) => {
       id: "testimonials",
     },
     {
+      content: "Experience",
+      link: "#experience",
+      id: "experience",
+    },
+    {
       content: "Blog",
       link: "#blog",
       id: "blog",
@@ -36,7 +41,7 @@ const Navbar = ({ activeSection = "" }) => {
   ];
 
   return (
-    <nav className="sticky top-0 left-0 border-b border-b-zinc-600 flex justify-between items-center">
+    <nav className="fixed w-full top-0 left-0 z-50 border-b border-b-zinc-600 flex justify-between items-center">
       {/* Left side */}
       <div
         className="flex items-center

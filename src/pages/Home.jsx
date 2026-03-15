@@ -5,6 +5,7 @@ import Banner from "../components/Banner";
 import Projects from "../components/Projects";
 import Awards from "../components/Awards";
 import Testimonials from "../components/Testimonials";
+import Experience from "../components/Experience";
 import Blog from "../components/Blog";
 import Contact from "../components/Contact";
 import useScrollSpy from "../hooks/useScrollSpy";
@@ -14,6 +15,7 @@ const sectionIds = [
   "projects",
   "awards",
   "testimonials",
+  "experience",
   "blog",
   "contact",
 ];
@@ -24,15 +26,16 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="relative w-full bg-[url(src/assets/Rectangle.png)]"
+      className="relative w-full min-h-screen bg-[url(src/assets/Rectangle.png)] overflow-x-hidden pt-23.25"
     >
       <Navbar activeSection={activeSection} />
       <Sidenav />
-      <div className="ml-30">
+      <div className="max-w-screen-2xl">
         <Banner />
         <Projects />
         <Awards />
         <Testimonials />
+        <Experience />
         <Blog />
         <Contact />
       </div>

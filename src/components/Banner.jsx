@@ -2,10 +2,11 @@ import React from "react";
 import { CgArrowLongRight } from "react-icons/cg";
 import grids from "../assets/Grid.png";
 import circles from "../assets/Group 5.png"
+import CommonButton from "./CommonButton";
 
 const Banner = () => {
   return (
-    <section id="banner" className="w-full flex">
+    <section id="banner" className="w-full flex ml-30">
       {/* col1 */}
       <div className="column-1">
         <div className="flex gap-41.75 text-[76px] leading-tight text-[#E2DCC8]">
@@ -20,12 +21,7 @@ const Banner = () => {
           GREAT
         </span>
         <span className="text-[76px] pl-20 text-[#E2DCC8]">DESIGN</span>
-        <div className="hire-me flex gap-7 items-center mt-52.5 justify-end w-156.5">
-          <p>(hire me :)</p>
-          <button className="text-white text-3xl px-9 py-4 bg-[#B66449] rounded-full">
-            <CgArrowLongRight />
-          </button>
-        </div>
+        <CommonButton content={"(hire me :)"} />
         <div className="stats flex justify-between mt-35">
           <div className="single-stat flex gap-6.5 items-center">
             <span className="text-[74px] ">8</span>
@@ -48,7 +44,11 @@ const Banner = () => {
           alt="grids"
           className="absolute top-0 left-0 w-full h-full object-contain"
         />
-        <img src={circles} alt="circles" className="absolute top-0 left-40 w-3/4 h-full object-contain" />
+        <img
+          src={circles}
+          alt="circles"
+          className="absolute top-0 left-40 w-3/4 h-full object-contain"
+        />
       </div>
     </section>
   );

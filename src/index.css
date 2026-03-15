@@ -2,6 +2,17 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: #e2dcc8;
 }
 
 @layer base {
@@ -9,17 +20,23 @@ html {
     color: white;
   }
   h1 {
-    color: white;
+    color: #e2dcc8;
+    font-weight: bold;
   }
   h2 {
-    color: white;
+    color: #e2dcc8;
   }
   h3 {
-    color: white;
+    color: #e2dcc8;
   }
   span {
     color: white;
   }
+}
+
+@theme {
+  --color-brown-white: var(--text-color);
+  --color-orange: #b66449;
 }
 
 /* @layer utilities {
